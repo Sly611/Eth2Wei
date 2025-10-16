@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Eth2Wei Converter",
+  "version": "1.0.0",
+  "description": "A basic example extension to convert Ether to Gwei and Wei",
+  "icons": {
+    "16": "icon-16.png",
+    "32": "icon-32.png",
+    "128": "icon-128.png"
+  },
+  "action": {
+        "default_popup": "index.html"
+  }   
+}
