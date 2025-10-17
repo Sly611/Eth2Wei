@@ -127,7 +127,7 @@ function App() {
           >
             <label>Wei</label>
             <label>Gwei</label>
-            <label>Ether</label>
+            <label>Eth</label>
           </div>
         </div>
 
