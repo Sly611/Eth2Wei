@@ -7,8 +7,7 @@ const COINGECKO_API =
 
 // 1 gwei = 1e9 wei, 1 eth = 1e18 wei. Wei is integer-valued and must be
 // handled with BigInt to stay exact above 2^53 (~0.009 ETH), where a JS
-// number would silently lose precision. Gwei and eth are fractional and
-// kept as display strings derived from the canonical wei BigInt.
+// number would lose precision.
 const GWEI_SCALE = 9;
 const ETH_SCALE = 18;
 
@@ -23,7 +22,7 @@ function App() {
   const [usd, setUsd] = useState("0");
 
   // The canonical integer wei value behind the form, kept as a BigInt so it
-  // survives past 2^53. null means "no value entered".
+  // survives past 2^53.
   const [weiValue, setWeiValue] = useState(null);
 
   const reset = () => {
@@ -35,7 +34,7 @@ function App() {
   };
 
   // Format a BigInt wei value as a fractional string with `scale` decimals,
-  // trimming trailing zeros so "5000000000" wei renders as "5" gwei.
+  // trimming trailing zeros.
   const formatWei = (wei, scale) => {
     const s = wei.toString().padStart(scale + 1, "0");
     const intPart = s.slice(0, -scale) || "0";
@@ -44,8 +43,8 @@ function App() {
   };
 
   // Convert a fractional user input (gwei/eth) to an integer wei BigInt by
-  // string-shifting the decimal point — avoids float rounding entirely.
-  // Returns null for empty / non-finite / negative input.
+  // string-shifting the decimal point.
+  // Returns null for empty / negative input.
   const weiFromFractional = (raw, scale) => {
     if (raw === "" || raw == null) return null;
     const n = Number(raw);
@@ -71,13 +70,11 @@ function App() {
     return (eth * currentPrice).toFixed(2);
   };
 
-  // Handle input changes and convert all values. The active field keeps the
-  // user's literal input (no normalization fights the cursor); the other two
-  // are rendered from the canonical wei BigInt via formatWei.
+  // Handle input changes and convert all values.
   const valueChangeHandler = (input, event) => {
     const value = event.target.value;
 
-    // type="number" can emit "1e9", "-5", ".", "Infinity", etc. Empty or
+    // type="number" can emit "1e9", "-5", ".", etc. Empty or
     // invalid input resets the whole form to a clean state.
     if (value === "") {
       reset();
