@@ -26,14 +26,9 @@ You will need:
 Clone the project (or copy the folder) onto your machine:
 
 ```bash
-git clone <your-repo-url> eth2wei
-cd eth2wei
+git clone https://github.com/Sly611/Eth2Wei.git
+cd Eth2Wei
 ```
-
-<!-- Screenshot: terminal showing the clone + cd commands -->
-![Step 1: cloning the project and entering the directory](docs/images/step-1-clone.png)
-
----
 
 ## Step 2 — Install dependencies
 
@@ -44,11 +39,6 @@ npm install
 ```
 
 This downloads everything needed to build the extension. It only needs to be run once, and again only if the dependencies in `package.json` change.
-
-<!-- Screenshot: terminal showing npm install output -->
-![Step 2: running npm install](docs/images/step-2-install.png)
-
----
 
 ## Step 3 — Build the extension
 
@@ -72,9 +62,6 @@ dist/
   assets/               # compiled JS + CSS bundles
 ```
 
-<!-- Screenshot: terminal showing a successful build output -->
-![Step 3: running npm run build, showing the dist output](docs/images/step-3-build.png)
-
 > **Tip:** If you change any source files later, just run `npm run build` again. You can then reload the extension in the browser (see Step 5) to pick up the changes.
 
 ---
@@ -89,6 +76,7 @@ dist/
    - **Vivaldi:** `vivaldi://extensions`
 
 <!-- Screenshot: the chrome://extensions page -->
+
 ![Step 4: the browser extensions management page](docs/images/step-4-extensions-page.png)
 
 ---
@@ -98,6 +86,7 @@ dist/
 Toggle **Developer mode** on (top-right corner of the extensions page).
 
 <!-- Screenshot: Developer mode toggle turned on, revealing "Load unpacked" button -->
+
 ![Step 5: enabling Developer mode shows the Load unpacked button](docs/images/step-5-developer-mode.png)
 
 ---
@@ -109,9 +98,11 @@ Toggle **Developer mode** on (top-right corner of the extensions page).
 3. The Eth2Wei Converter extension now appears in your extensions list.
 
 <!-- Screenshot: folder picker pointed at the dist folder -->
+
 ![Step 6a: choosing the dist folder in the picker](docs/images/step-6a-load-unpacked.png)
 
 <!-- Screenshot: the extension now showing in the extensions list -->
+
 ![Step 6b: Eth2Wei Converter installed and listed](docs/images/step-6b-installed.png)
 
 ---
@@ -123,10 +114,8 @@ Toggle **Developer mode** on (top-right corner of the extensions page).
 3. The popup opens. Type a value in any of the **Wei**, **Gwei**, or **Eth** boxes; the other two (and the USD value) update automatically.
 
 <!-- Screenshot: the toolbar extensions menu with Eth2Wei Converter -->
-![Step 7a: opening the extension from the toolbar menu](docs/images/step-7a-open-popup.png)
 
-<!-- Screenshot: the converter popup in use, filled with a value -->
-![Step 7b: the popup with a value converted across Wei, Gwei, Eth, and USD](docs/images/step-7b-popup-in-use.png)
+![Step 7a: opening the extension from the toolbar menu](docs/images/step-7a-open-popup.png)
 
 ---
 
@@ -144,6 +133,7 @@ When you change the source code, you need to rebuild and reload:
 3. Click the **reload** icon on the Eth2Wei Converter card.
 
 <!-- Screenshot: the reload icon on the installed extension card -->
+
 ![Reloading the extension after a rebuild](docs/images/reload-extension.png)
 
 ---
